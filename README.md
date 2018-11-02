@@ -236,12 +236,15 @@ python setup.py install
 
 + Version: 0.2.0
 + Release date: 2016-09-16
-+ Direct link: https://github.com/watzon/xmler/releases/tag/0.2.0
++ PyPI link: https://pypi.org/project/xmler/
++ Github link: https://github.com/watzon/xmler/releases/tag/0.2.0
 
 # Forked Version
 
 + Version: 0.2.1
 + Release date: 2019-11-02
++ Test PyPI link: https://test.pypi.org/project/xmler/
++ Github link: https://github.com/dimitern/xmler/releases/tag/0.2.1
 + Changes:
 	- Made Python 2 and Python 3 compatible.
 	- Allow sequences as children, updated README.

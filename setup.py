@@ -14,7 +14,7 @@ setup(
     license="LICENCE",
     url="https://github.com/dimitern/xmler",
     py_modules=["xmler"],
-    download_url="https://pypi.python.org/packages/source/d/xmler/xmler-%s.tar.gz?raw=true"
+    download_url="https://test.pypi.python.org/packages/source/d/xmler/xmler-%s.tar.gz?raw=true"
     % (version),
     platforms="Cross-platform",
     classifiers=[
