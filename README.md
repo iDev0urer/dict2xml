@@ -26,7 +26,7 @@ myDict = {
 	}
 }
 
-print(dict2xml(myDict, pretty=True, customRoot=None))
+print(dict2xml(myDict, pretty=True))
 ```
 
 Which will return the following XML:
@@ -157,6 +157,50 @@ myDict = {
 }
 ```
 
+#### Sequences within a dictionary
+
+This fork (https://github.com/dimitern/xmler/) additionally supports having
+sequences of type `list`, `set`, or `tuple` (as well as `dict`) as values.
+Non-string values (`int`, `float`, `decimal.Decimal`, and `bool`) are
+converted to strings automatically.
+
+**Example:**
+
+Python input:
+```python
+myDict = {
+	"root": {
+		"child": [
+			{
+				"id": 12,
+			},
+			{
+				"price": Decimal("5.6782")
+			},
+			{
+				"meta": ({"on_stock": True}, {"rating": 3.14})
+			}
+		]
+	}
+}
+```
+
+Pretty XML Output:
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <child>
+    <id>12</id>
+    <price>5.6782</price>
+    <meta>
+      <on_stock>True</on_stock>
+      <rating>3.14</rating>
+    </meta>
+  </child>
+</root>
+```
+
+
 # Installation
 
 xmler is [published to PyPi](https://pypi.python.org/pypi/xmler), so installing it is as easy as:
@@ -177,27 +221,34 @@ You can also download the installer as a tar archive and install it using python
 python setup.py install
 ```
 
-# Author
+# Original Author
 
 + Author: Chris Watson
-+ Email: chris@marginzero.co
-+ Repository: http://github.com/iDev0urer/xmler
++ Email: chris@watzon.me
++ Repository: http://github.com/watzon/xmler
 
-# Version
+# Fork Author
++ Author: Dimiter Naydenov
++ Email: dimiter@naydenov.net
++ Repository: http://github.com/dimitern/xmler
 
-+ Version: 0.1.0
-+ Release date: 2016-08-09
+# Original Version
 
-# Revision History
++ Version: 0.2.0
++ Release date: 2016-09-16
++ Direct link: https://github.com/watzon/xmler/releases/tag/0.2.0
 
-## Version 0.1.0
-+ Release date: 2016-08-09
+# Forked Version
+
++ Version: 0.2.1
++ Release date: 2019-11-02
 + Changes:
-	- Initial commit
+	- Made Python 2 and Python 3 compatible.
+	- Allow sequences as children, updated README.
 
-# Copywrite and License
+# Copyright and License
 
-Copywrite 2016 by Christopher Watson
+Copyright 2016 by Christopher Watson
 
 Released under the GNU General Public Licence, Version 2:
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
